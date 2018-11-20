@@ -46,5 +46,15 @@ $('.show-more-item').on('click.ShowMore', '.show-more-less-btn', function(e) {
 
 ## 性能问题
 
-一般而言，全文都
+一般而言，全文都很长，直接json写在html里，会造成性能问题。（真的很严重的性能问题）
+所以我们一般使用ajax来定义`showMore.data.long`：
 
+```html
+ <script>
+$.get('?action=data', {id:id}, function(ret) {
+    showMore.data.long[id] = ret;
+},'json');
+</script>
+```
+
+在载入完成之前点击展开和收起按钮只会造成类名的切换，不会有严重后果。
