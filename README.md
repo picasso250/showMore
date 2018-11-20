@@ -31,7 +31,7 @@
 
 ## 动态加载信息流
 
-如果想要实现类似知乎的动态加载，只需要在加载完毕后（dom安装完毕后）调用`showMore.rebindEvent()`即可重新绑定所有的事件（不需要单独处理新加载出来的部分）。
+如果想要实现类似知乎的动态加载，只需要在加载完毕后（dom安装完毕后，且`showMore.data.long`也已经填充）调用`showMore.rebindEvent()`即可重新绑定所有的事件（不需要单独处理新加载出来的部分）。
 
 ## 自定义事件
 
@@ -43,3 +43,8 @@ $('.show-more-item').on('click.ShowMore', '.show-more-less-btn', function(e) {
   // 收起按钮
 });
 ```
+
+## 性能问题
+
+一般而言，全文都
+
